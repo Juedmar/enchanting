@@ -5,12 +5,19 @@
  <title>Minecraft-Type-Inator</title>
  <style>
  body {
-  height: 100vh;
+  /* height: 100vh; */
   background-color: gray;
   background-image: url('images/background.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
+ }
+ div.centeredContainer {
+  position: absolute;
+  left: 1%; right: 1%; top: 50%;
+  transform: translateY(-50%);
+  margin-top: 4%;
+  margin-bottom: 12px;
  }
  div.textInput {
   display: flex;
@@ -19,8 +26,6 @@
   align-items: center;
   justify-content: center;
   margin: auto;
-  margin-top: auto;
-  margin-bottom: auto;
   padding-top: 12px;
   padding-bottom: 12px;
   border: 6px solid #333333CC;
@@ -42,14 +47,20 @@
   cursor: pointer;
  }
  div.characterRow {
-  display: flex;
-  width: 98%;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-template-areas:
+    'div div div div div div div div div div div div div'
+        'div div div div div div div div div div div div div';
+  gap: 3px;
+  width: 94%;
   background-color: #888888AA;
   align-items: center;
   justify-content: center;
   margin: auto;
-  margin-top: 12px;
-  padding-top: 12px;
+  margin-top: 6px;
+  padding-top: 6px;
   padding-bottom: 12px;
   border: 6px solid #333333CC;
   border-radius: 12px;
@@ -78,6 +89,21 @@
   border-radius: 12px;
   cursor: pointer;
  }
+ /* Use a media query to add a break point at 800px: */
+ @media screen and (max-width: 800px) {
+ div.characterRow {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-template-areas:
+    'div div div div div div div'
+    'div div div div div div div';
+  gap: 12px;
+  width: max-content;
+  }
+ div.centeredContainer { margin-top: 1%; margin-bottom: 6px; }
+ }
+
  </style>
 </head>
 
@@ -85,10 +111,13 @@
 
 <audio id="enchant" src="media/enchant.mp3" preload="auto" style="display:none">No audio!</audio>
 
-<div class="centeredContainer" style="position: absolute; left: 1%; right: 1%; top: 50%; transform: translateY(-50%); margin-top: 2%; margin-bottom: 6%;">
+<div class="centeredContainer">
 
 <div class="textInput">
  <input type="text" id="spells" class="enchantment" disabled disabled="disabled" readonly="readonly" />
+ <div id="erase" class="erase" onclick="type(' ')">
+  <img src="images/space.png" style="width: auto; height: 5vw; margin-left: 12px;">
+ </div>
  <div id="erase" class="erase" onclick="type('erase')">
   <img src="images/eraser.png" style="width: auto; height: 5vw; margin-left: 12px;">
  </div>
@@ -109,9 +138,7 @@
  <div id="k" class="lettersDiv" onclick="type('K')"><img src="letters/k.jpg" class="lettersImg"></div>
  <div id="l" class="lettersDiv" onclick="type('L')"><img src="letters/l.jpg" class="lettersImg"></div>
  <div id="m" class="lettersDiv" onclick="type('M')"><img src="letters/m.jpg" class="lettersImg"></div>
-</div>
 
-<div class="characterRow">
  <div id="n" class="lettersDiv" onclick="type('N')"><img src="letters/n.jpg" class="lettersImg"></div>
  <div id="o" class="lettersDiv" onclick="type('O')"><img src="letters/o.jpg" class="lettersImg"></div>
  <div id="p" class="lettersDiv" onclick="type('P')"><img src="letters/p.jpg" class="lettersImg"></div>
@@ -127,9 +154,6 @@
  <div id="z" class="lettersDiv" onclick="type('Z')"><img src="letters/z.jpg" class="lettersImg"></div>
 </div>
 
-<div class="spaceBar" onclick="type(' ')"> ________________________________________
-</div>
-
 <!-- End of "Centered Container" -->
 </div>
 
@@ -140,6 +164,7 @@ spells = document.getElementById("spells")
 spells.value += arg; 
 if (arg == 'erase') { spells.value = ""; }
 enchant.play()
+console.log(window.innerHeight)
 }
 </script>
 
