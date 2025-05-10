@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Minecraft-Typer-Inator</title>
+</head>
+
+<body style="background-color: black; background-image: url('images/background.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: 100% 100%;">
+
+<audio id="bip" src="media/bip.mp3" preload="auto" style="display:none">No audio!</audio>
+
+<div style="position: absolute; left: 1%; right: 1%; top: 50%; transform: translateY(-50%);">
+
+<div style="display: flex; width: 70%; background-color: #888888AA; align-items: center; justify-content: center; margin: auto; margin-top: 12px; padding: 12px; border: 6px solid black; border-radius: 12px;">
+ <div id="a" style="width: max-content; padding: 3px; cursor: pointer;" onclick="type('A')"><img src="letters/a.jpg" style="width: auto; height: 8.5vw;"></div>
+ <div id="b" style="width: max-content; padding: 3px; cursor: pointer;" onclick="type('B')"><img src="letters/b.jpg" style="width: auto; height: 8.5vw;"></div>
+ <div id="c" style="width: max-content; padding: 3px; cursor: pointer;" onclick="type('C')"><img src="letters/c.jpg" style="width: auto; height: 8.5vw;"></div>
+ <div id="d" style="width: max-content; padding: 3px; cursor: pointer;" onclick="type('D')"><img src="letters/d.jpg" style="width: auto; height: 8.5vw;"></div>
+ <div id="e" style="width: max-content; padding: 3px; cursor: pointer;" onclick="type('E')"><img src="letters/e.jpg" style="width: auto; height: 8.5vw;"></div>
+ <div id="f" style="width: max-content; padding: 3px; cursor: pointer;" onclick="type('F')"><img src="letters/f.jpg" style="width: auto; height: 8.5vw;"></div>
+ <div id="g" style="width: max-content; padding: 3px; cursor: pointer;" onclick="type('G')"><img src="letters/g.jpg" style="width: auto; height: 8.5vw;"></div>
+ <div id="h" style="width: max-content; padding: 3px; cursor: pointer;" onclick="type('H')"><img src="letters/h.jpg" style="width: auto; height: 8.5vw;"></div>
+ <div id="i" style="width: max-content; padding: 3px; cursor: pointer;" onclick="type('I')"><img src="letters/i.jpg" style="width: auto; height: 8.5vw;"></div>
+ <div id="j" style="width: max-content; padding: 3px; cursor: pointer;" onclick="type('J')"><img src="letters/j.jpg" style="width: auto; height: 8.5vw;"></div>
+</div>
+
+<div style="display: flex; width: 70%; background-color: #888888AA; align-items: center; justify-content: center; margin: auto; margin-top: 12px; padding: 12px; border: 6px solid black; border-radius: 12px;">
+ <div id="k" style="width: max-content; padding: 4px; cursor: pointer;" onclick="type('K')"><img src="letters/k.jpg" style="width: auto; height: 8.5vw;"></div>
+ <div id="l" style="width: max-content; padding: 4px; cursor: pointer;" onclick="type('L')"><img src="letters/l.jpg" style="width: auto; height: 8.5vw;"></div>
+ <div id="m" style="width: max-content; padding: 4px; cursor: pointer;" onclick="type('M')"><img src="letters/m.jpg" style="width: auto; height: 8.5vw;"></div>
+ <div id="n" style="width: max-content; padding: 4px; cursor: pointer;" onclick="type('N')"><img src="letters/n.jpg" style="width: auto; height: 8.5vw;"></div>
+ <div id="o" style="width: max-content; padding: 4px; cursor: pointer;" onclick="type('O')"><img src="letters/o.jpg" style="width: auto; height: 8.5vw;"></div>
+ <div id="p" style="width: max-content; padding: 4px; cursor: pointer;" onclick="type('P')"><img src="letters/p.jpg" style="width: auto; height: 8.5vw;"></div>
+ <div id="q" style="width: max-content; padding: 4px; cursor: pointer;" onclick="type('Q')"><img src="letters/q.jpg" style="width: auto; height: 8.5vw;"></div>
+ <div id="r" style="width: max-content; padding: 4px; cursor: pointer;" onclick="type('R')"><img src="letters/r.jpg" style="width: auto; height: 8.5vw;"></div>
+ <div id="s" style="width: max-content; padding: 4px; cursor: pointer;" onclick="type('S')"><img src="letters/s.jpg" style="width: auto; height: 8.5vw;"></div>
+ <div id="t" style="width: max-content; padding: 4px; cursor: pointer;" onclick="type('T')"><img src="letters/t.jpg" style="width: auto; height: 8.5vw;"></div>
+</div>
+
+<div style="display: flex; width: 60%; background-color: #888888AA; align-items: center; justify-content: center; margin: auto; margin-top: 12px; padding: 12px; border: 6px solid black; border-radius: 12px;">
+ <div id="u" style="width: max-content; padding: 4px; cursor: pointer;" onclick="type('U')"><img src="letters/u.jpg" style="width: auto; height: 8.5vw;"></div>
+ <div id="v" style="width: max-content; padding: 4px; cursor: pointer;" onclick="type('V')"><img src="letters/v.jpg" style="width: auto; height: 8.5vw;"></div>
+ <div id="w" style="width: max-content; padding: 4px; cursor: pointer;" onclick="type('W')"><img src="letters/w.jpg" style="width: auto; height: 8.5vw;"></div>
+ <div id="x" style="width: max-content; padding: 4px; cursor: pointer;" onclick="type('X')"><img src="letters/x.jpg" style="width: auto; height: 8.5vw;"></div>
+ <div id="y" style="width: max-content; padding: 4px; cursor: pointer;" onclick="type('Y')"><img src="letters/y.jpg" style="width: auto; height: 8.5vw;"></div>
+ <div id="z" style="width: max-content; padding: 4px; cursor: pointer;" onclick="type('Z')"><img src="letters/z.jpg" style="width: auto; height: 8.5vw;"></div>
+ <div id="erase" style="width: max-content; padding: 4px; cursor: pointer;" onclick="type('erase')"><img src="images/eraser.png" style="width: auto; height: 8.5vw;"></div>
+ <div id="space" style="width: 50px; min-height: 30px; max-height: 116px; background-color: #DDD; text-align: center; margin: 6px 6px 8px; padding: 4px; border: 3px solid #666; cursor: pointer;" onclick="type(' ')">__</div>
+</div>
+
+<div style="display: flex; width: 60%; background-color: #888888AA; align-items: center; justify-content: center; margin: auto; margin-top: 12px; padding: 12px; border: 6px solid black; border-radius: 12px;">
+ <input type="text" id="spells" name="spells" style="width: 100%; min-height: 40px; max-height: 60px; font-size: 3vw; text-align: center;" />
+</div>
+
+</div>
+
+
+<script type="text/javascript">
+function type(arg) {
+spells = document.getElementById("spells")
+spells.value += arg; 
+if (arg == 'erase') { spells.value = ""; }
+bip.play()
+}
+</script>
+
+
+
+</body>
+</html>
