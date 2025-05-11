@@ -110,6 +110,8 @@
 <body>
 
 <audio id="enchant" src="media/enchant.mp3" preload="auto" style="display:none">No audio!</audio>
+<audio id="erase" src="media/erase.mp3" preload="auto" style="display:none">No audio!</audio>
+
 
 <div class="centeredContainer">
 
@@ -160,10 +162,12 @@
 
 <script type="text/javascript">
 function type(arg) {
-spells = document.getElementById("spells")
-spells.value += arg; 
-if (arg == 'erase') { spells.value = ""; }
-enchant.play()
+ spells = document.getElementById("spells")
+ enchant = document.getElementById("enchant")
+ erase = document.getElementById("erase")
+ spells.value += arg
+ enchant.play()
+ if (arg == 'erase') { spells.value = ""; enchant.pause(); erase.play(); }
 }
 </script>
 
